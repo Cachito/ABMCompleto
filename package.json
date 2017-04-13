@@ -1,0 +1,24 @@
+{
+  "name": "abm-completo",
+  "version": "1.0.0",
+  "description": "Primer ABM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mi",
+    "primer",
+    "abm",
+    "node"
+  ],
+  "author": "yo",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.4",
+    "morgan": "^1.8.1"
+  }
+}

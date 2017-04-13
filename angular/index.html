@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="CachoAbmApp">
+<head>
+    <meta charset="utf-8">
+    <title>Primer ABM de Cacho</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Cargamos angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+</head>
+<body ng-controller="CachoAbmController">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Cantidad de Registrados Rockeando</h1>
+            <span class="label label-success">{{ usuarios.length }}</span>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-1">
+                <table class="table table-striped">
+                    <tr class="info">
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Edad</td>
+                    </tr>
+                    <tr ng-repeat ="usuario in usuarios" ng-click="selectUsuario(usuario)">
+                        <td>{{ usuario.Nombre }}</td>
+                        <td>{{ usuario.Apellido }}</td>
+                        <td>{{ usuario.Edad }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-4 col-sm-offset-1 text-center">
+                <form name="cachoForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newUsuario.Nombre" required>
+                        <br>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newUsuario.Apellido" required>
+                        <br>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Edad" ng-model="newUsuario.Edad" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg" ng-click="registrarUsuario()" ng-disabled="cachoForm.$invalid || selected">Registrar</button>
+                    <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarUsuario(newUsuario)" ng-disabled="!newUsuario.Nombre || !newUsuario.Apellido || !newUsuario.Edad || !selected">Modificar</button>
+                    <button type="submit" class="btn btn-danger btn-lg" ng-click="borrarUsuario(newUsuario)" ng-disabled="!newUsuario.Nombre || !newUsuario.Apellido || !newUsuario.Edad || !selected">Borrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
