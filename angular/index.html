@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- Cargamos angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="core.js"></script>
 </head>
 <body ng-controller="CachoAbmController">
     <div class="container">
@@ -31,16 +32,16 @@
             <div class="col-sm-4 col-sm-offset-1 text-center">
                 <form name="cachoForm">
                     <div class="form-group">
-                        <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newUsuario.Nombre" required>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Nombre" ng-model="newUsuario.nombre" required>
                         <br>
-                        <input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newUsuario.Apellido" required>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Apellido" ng-model="newUsuario.apellido" required>
                         <br>
-                        <input type="text" class="form-control input-lg text-center" placeholder="Edad" ng-model="newUsuario.Edad" required>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Edad" ng-model="newUsuario.edad" required>
                     </div>
 
                     <button type="submit" class="btn btn-success btn-lg" ng-click="registrarUsuario()" ng-disabled="cachoForm.$invalid || selected">Registrar</button>
-                    <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarUsuario(newUsuario)" ng-disabled="!newUsuario.Nombre || !newUsuario.Apellido || !newUsuario.Edad || !selected">Modificar</button>
-                    <button type="submit" class="btn btn-danger btn-lg" ng-click="borrarUsuario(newUsuario)" ng-disabled="!newUsuario.Nombre || !newUsuario.Apellido || !newUsuario.Edad || !selected">Borrar</button>
+                    <button type="submit" class="btn btn-warning btn-lg" ng-click="modificarUsuario(newUsuario)" ng-disabled="!newUsuario.nombre || !newUsuario.apellido || !newUsuario.edad || !selected">Modificar</button>
+                    <button type="submit" class="btn btn-danger btn-lg" ng-click="borrarUsuario(newUsuario)" ng-disabled="!newUsuario.nombre || !newUsuario.apellido || !newUsuario.edad || !selected">Borrar</button>
                 </form>
             </div>
         </div>

@@ -8,7 +8,7 @@ var methodOverride = require("method-override");
 
 var port = process.env.PORT || 8080;  // puerto local 8080 si no está declarada la variable PORT
 
-// configuración
+// configuración el puerto es el que te da mongo
 mongoose.connect('mongodb://localhost:27017/ABMMongoBase');
 // ABMMongoBase es el nombre que usará mongo oara guardar la data. si no existe la crea
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 // para que entienda con json
 
-pp.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('X-HTTP-Method-Override'));
 // habilita PUT y DELETE en nuesta app
 
 // carga de los endpoints
